@@ -25,7 +25,11 @@ public class LookDecision : Decision
         {
             controller.ChaseTarget = hit.transform;
             // Changing it to 1 give it good distance, to let Enemy Start Attacking.
-            controller.EnemyStats.lookSphereCastRadius = 1; 
+            controller.EnemyStats.lookSphereCastRadius = 1;
+
+            // Reset the Rotation of Eye.
+            controller.Eyes.localEulerAngles = new Vector3(controller.Eyes.rotation.x, 0, controller.Eyes.rotation.z);
+
             return true;
         }
         else

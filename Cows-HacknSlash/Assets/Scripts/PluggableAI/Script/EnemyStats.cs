@@ -13,4 +13,5 @@ public class EnemyStats : ScriptableObject {
     public int AttackDamage = 50;
 
     public float TurnSpeed = 5f;
+    public float RotationSpeedOfEye = 2f;
 }

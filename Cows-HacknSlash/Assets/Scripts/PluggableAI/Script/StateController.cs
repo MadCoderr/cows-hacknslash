@@ -20,6 +20,8 @@ public class StateController : MonoBehaviour {
     [HideInInspector] public int NextWayPoint;
     [HideInInspector] public Transform ChaseTarget;
     [HideInInspector] public float StateTimeElapsed;
+    [HideInInspector] public bool ReachedToRight = false;
+    [HideInInspector] public float Value = 0;
 
     private bool _aiActive;
     private float _tempSphereRadius;

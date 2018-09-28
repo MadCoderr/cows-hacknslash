@@ -8,6 +8,7 @@ public class PatrolAction : Action
     public override void Act(StateController controller)
     {
         Patrol(controller);
+        RotateEye(controller);
     }
 
     private void Patrol(StateController controller)
@@ -26,4 +27,28 @@ public class PatrolAction : Action
             controller.NextWayPoint = (controller.NextWayPoint + 1) % controller.WayPointsList.Count;
         }
     }
+
+    // It will let the enemy to rotate its eye transform between 80 to -80 so it look like its facing right and left
+    private void RotateEye(StateController controller)
+    {
+        if (!controller.ReachedToRight)
+        {
+            controller.Value += controller.EnemyStats.RotationSpeedOfEye;
+            if (controller.Value >= 80)
+            {
+                controller.ReachedToRight = true;
+            }
+        }
+        else 
+        {
+            controller.Value -= controller.EnemyStats.RotationSpeedOfEye;
+            if (controller.Value <= -80)
+            {
+                controller.ReachedToRight = false;
+            }
+        }
+
+        controller.Eyes.localEulerAngles = new Vector3(0, controller.Value, 0);
+    }
+
 }

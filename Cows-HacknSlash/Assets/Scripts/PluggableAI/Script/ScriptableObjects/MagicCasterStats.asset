@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: MagicCasterStats
   m_EditorClassIdentifier: 
   lookRange: 40
-  lookSphereCastRadius: 5
+  lookSphereCastRadius: 1
   AttackRange: 10
   AttackRate: 1
   AttackDamage: 50
   TurnSpeed: 5
+  RotationSpeedOfEye: 2
